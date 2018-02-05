@@ -18,19 +18,11 @@ public class ClienteResource {
 	private ClienteService service;
 	
 	@RequestMapping(value= "/{id}", method=RequestMethod.GET)
-	public ResponseEntity<?> find(@PathVariable Integer id) {
+	public ResponseEntity<Cliente> find(@PathVariable Integer id) {
 		Cliente obj = service.buscar(id);
 		
 		return ResponseEntity.ok().body(obj);
-		
-		/*Cliente cat1 = new Cliente(null, "Informatica");
-		Cliente cat2 = new Cliente(null, "Escritorio");
-		
-		List<Cliente> lista = new ArrayList<>();
-		lista.add(cat1);
-		lista.add(cat2);
-		
-		return lista;*/
+	
 	}
 
 }
